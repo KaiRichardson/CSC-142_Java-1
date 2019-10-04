@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Calculations
+comment0.text=\r\n\ This\ application\ implements\ approximations\ for\ e^x\ and\ sin(x).\r\n\r\n\ @author\ Kai\ Richardson\r\n\ @version\ 1\r\n
+comment1.params=x
+comment1.target=void\ main(double)
+comment2.params=n\ x
+comment2.target=double\ eToTheX(int,\ double)
+comment3.params=n\ x
+comment3.target=double\ sinX(int,\ double)
+numComments=4
