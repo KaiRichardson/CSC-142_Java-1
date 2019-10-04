@@ -2,51 +2,48 @@
  * This application implements approximations for e^x and sin(x).
  *
  * @author Kai Richardson
- * @version 1
+ * @date 10/03/2019
  */
 public class Calculations
 {
-    public static void main(double x)
+    public static void main(int x)
     { 
-        int n = 1; 
-
         // loop printing e^x
         System.out.println("x      e^x");
         System.out.println("=      ===");
-        eToTheX(n,x);
+        for (int i = -x; i <= x; i++)
+        {
+            System.out.println(i + "      " + eToTheX(i));
+        }
 
         System.out.print("\n\n");
 
         // loop printing sin(x)
         System.out.println("x      sin(x)");
         System.out.println("=      ======");
-        sinX(n,x);
-
+        for (int i = 1; i <= x + 1; i++)
+        {
+            System.out.println(i + "PI/2      " + sinX(i));
+        }
     }
 
-    public static double eToTheX(int n, double x)
+    public static double eToTheX(double x)
     {
         // this loops through n!
-        double sum = 0;
-        for (int i = n - 1; i >= 0; i++)
+        int result = 1;
+        for(int i = 1; i <= x; i++)
         {
-            sum = 1 + x * sum / i;
-            System.out.println(n + "      " + sum);
+            result += result * i;
         }
-        return sum;
+        return result;
     }
 
-    public static double sinX(int n, double x)
+    public static double sinX(double x)
     {
-        // convert x to an angle between -2 PI and 2 PI
-        x = x % (2 * Math.PI);
-
         // compute the Taylor series approximation
-        double sum = 0;       // sum of first i terms in taylor series
-        for (int i = 1; n <= 0; i++) {
-            n *= (x + i);
-            sum += n;
-            System.out.println(n + "PI/2      " + sum);
+        double sum = 0;
+        for (int i = 0; i <= x; ++i) {
+            sum = (Math.PI * i) / 2;
         }
         return sum;
     }
