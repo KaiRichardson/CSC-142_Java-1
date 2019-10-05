@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DPLab
+comment0.text=\r\n\ This\ class\ demonstrates\ the\ use\ of\ the\ graphics\ tools\ in\ Java.\ \ To\ use\r\n\ it,\ place\ this\ file\ in\ a\ folder\ along\ with\ the\ file\ DrawingPanel.java\r\n\ You\ can\ find\ the\ DrawingPanel.java\ file\ in\ this\ week's\ examples,\ and\ it\ is\ also\r\n\ available\ on\ the\ text\ book's\ companion\ web\ site\ in\ the\ "Supplements"\ \r\n\ area.\ \ \r\n\ \r\n\ This\ class\ also\ demonstrates\ the\ use\ of\ a\ parameterized\ method\ named\r\n\ drawImage()\ that\ draws\ a\ scaled\ version\ of\ an\ image\ every\r\n\ time\ it\ is\ called.\ \ Notice\ how\ this\ makes\ it\ easy\ to\ create\ a\ complex\r\n\ drawing\ with\ a\ modest\ amount\ of\ code.\r\n\r\n\ Finally,\ notice\ the\ details\ in\ the\ method\ block\ comment.\ You\ want\ that\ same\ level\r\n\ of\ detail\ in\ your\ documentation.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ This\ 'main'\ method\ creates\ a\ drawing\ panel\ and\ draws\ a\ scene\ in\ it.\r\n
+comment2.params=g\ x\ y\ height\ c
+comment2.target=void\ drawImage(java.awt.Graphics,\ int,\ int,\ int,\ java.awt.Color)
+comment2.text=\r\n\ This\ method\ draws\ an\ image\ of\ a\ filled\ ellipse\ with\ a\ white\ vertical\ and\ horizontal\ line\r\n\ across\ the\ middle.\ The\ width\ of\ the\ ellipse\ is\ 2\ times\ the\ height.\r\n\r\n\ @param\ g\ the\ Graphics\ context\ to\ use\ for\ the\ drawing\r\n\ @param\ x\ the\ x-coordinate\ of\ the\ upper-left\ corner\ of\ the\ ellipse's\ bounding\ box\ in\ pixels\r\n\ @param\ y\ the\ y-coordinate\ of\ the\ upper-left\ corner\ of\ the\ ellipse's\ bounding\ box\ in\ pixels\r\n\ @param\ height\ the\ height\ the\ ellipse\ in\ pixels\r\n\ @param\ c\ the\ Color\ of\ the\ ellipse\r\n
+numComments=3
