@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TestDP
+comment0.text=\r\n\ This\ class\ demonstrates\ the\ use\ of\ the\ graphics\ tools\ in\ Java.\ \ To\ use\r\n\ it,\ place\ TestDP.java\ in\ a\ folder\ along\ with\ the\ file\ DrawingPanel.java\r\n\ available\ on\ the\ text\ book's\ companion\ web\ site\ in\ the\ "Supplements"\ \r\n\ area.\ \ You\ do\ not\ need\ to\ open\ the\ DrawingPanel\ code\ in\ DrJava\ for\ it\r\n\ to\ work.\ \ Other\ development\ environments\ may\ work\ differently;\ contact\r\n\ your\ instructor\ if\ you\ have\ questions.\r\n\ \r\n\ This\ class\ also\ demonstrates\ the\ use\ of\ a\ parameterized\ method\ named\r\n\ drawIndonesianFlag()\ that\ draws\ a\ scaled\ version\ of\ the\ flag\ every\r\n\ time\ it\ is\ called.\ \ Notice\ how\ this\ makes\ it\ easy\ to\ create\ a\ complex\r\n\ drawing\ with\ a\ modest\ amount\ of\ code.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ This\ 'main'\ method\ creates\ a\ drawing\ panel\ and\ draws\ a\ scene\ in\ it.\r\n
+comment2.params=g\ x\ y\ height
+comment2.target=void\ drawIndonesianFlag(java.awt.Graphics,\ int,\ int,\ int)
+comment2.text=\r\n\ This\ method\ draws\ an\ Indonesian\ flag\ at\ a\ location\ defined\ by\ x\ and\ y\ and\ \r\n\ with\ the\ specified\ height.\ \ The\ width\ of\ the\ flag\ is\ 1.5\ times\ the\ height.\r\n\ If\ the\ height\ provided\ is\ an\ odd\ number,\ it\ will\ be\ reduced\ by\ 1\ so\ that\r\n\ it\ is\ an\ even\ number;\ this\ ensures\ that\ the\ flag\ is\ symetrical.\ \ The\ \r\n\ drawing\ is\ performed\ on\ the\ Graphics\ context\ provided\ in\ the\ first\ parameter.\r\n\ The\ location\ of\ the\ flag\ is\ specified\ with\ respect\ to\ the\ upper-left\ corner\r\n\ of\ the\ drawing\ panel.\r\n\ \r\n\ @param\ g\ the\ Graphics\ context\ to\ use\ for\ the\ drawing\r\n\ @param\ x\ the\ x-coordinate\ of\ the\ upper-left\ corner\ of\ the\ flag\ in\ pixels\r\n\ @param\ y\ the\ y-coordinate\ of\ the\ upper-left\ corner\ of\ the\ flag\ in\ pixels\r\n\ @param\ height\ the\ height\ the\ flag\ in\ pixels\r\n
+numComments=3
