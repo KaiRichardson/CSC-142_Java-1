@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Drawings
+comment0.text=\r\n\ 2\ part\ project\ to\ make\ something\ creative\ on\ my\ own\ and\ the\ copy\ Ehrenstein\ Illusions\ provided.\r\n\ \r\n\ @author\ Kai\ Richardson\r\n\ @date\ 10/05/2019\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ drawImage()
+comment3.params=
+comment3.target=void\ drawIllusions()
+comment4.params=x\ y\ radius\ dpg
+comment4.target=void\ drawDisks(int,\ int,\ int,\ java.awt.Graphics)
+comment5.params=x\ y\ radius\ rows\ dpg
+comment5.target=void\ triangleOfCircles(int,\ int,\ int,\ int,\ java.awt.Graphics)
+comment6.params=points\ radius\ x1\ y1\ dpg
+comment6.target=void\ drawCirclePoints(int,\ double,\ int,\ int,\ java.awt.Graphics)
+numComments=7

@@ -22,7 +22,7 @@ public class DPLab
      */
     public static void main( String[] args ) {
         // Set up the DrawingPanel object and get a reference to its Graphics
-        DrawingPanel dp = new DrawingPanel( 350, 300);
+        DrawingPanel dp = new DrawingPanel();
         dp.setBackground( Color.LIGHT_GRAY );
         Graphics dpg = dp.getGraphics();
 
