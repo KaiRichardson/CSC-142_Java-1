@@ -91,7 +91,7 @@ public class Drawings
         dpg.drawArc(350, 350, 50, 50, 50, -100);
         dpg.setColor(petles);
         drawCirclePoints(30, 10, 390, 350, dpg);
-        
+
         // printing my name at the bottom
         dpg.setColor(Color.WHITE);
         String s = "Kai Richardson";
@@ -108,7 +108,7 @@ public class Drawings
         //drawDisks(50, 300, 30, dpg);
         //drawDisks(750, 50, 50, dpg);
         //drawDisks(525, 325, 90, dpg);
-        triangleOfCircles(300, 300, 40, 5, dpg);
+        triangleOfCircles(300, 300, 40, 1, 1, dpg);
 
     }
 
@@ -148,16 +148,17 @@ public class Drawings
     }
 
     // This method draws a triangles made of disks from the 'drawDisks' method
-    public static void triangleOfCircles(int x, int y, int radius, int rows, Graphics dpg)
-    {        
+    public static void triangleOfCircles(int x, int y, int radius, int rows, int curRow, Graphics dpg)
+    {   
         for (int i = 1; i < rows +1; i++)
         {
-            for (int j = 0; j < i; j++)
+            int x2 = x; 
+            for (int j = 1; j < i +1; j++)
             {
-                drawDisks(x, y, radius, dpg);
-                x += radius*2;
+                drawDisks(x2, y, radius, dpg);
+                x2 += radius*2;
             }
-            x -= radius*5;
+            x -= radius;
             y += radius;
         }
     }
