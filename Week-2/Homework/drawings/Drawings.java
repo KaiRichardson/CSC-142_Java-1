@@ -132,7 +132,9 @@ public class Drawings
         // adding vars
         int diameter = radius * 2;
         int count = 0;
+        int ringRadius = radius;
         int increment = radius/4;
+        int increment2 = radius/2;
         // centering oval
         //x -= radius;
         //y -= radius;
@@ -143,20 +145,20 @@ public class Drawings
         dpg.setColor(Color.BLACK);
 
         // adding box inside circle 
-        int xPoints[] = {x+radius, x, x+radius, x+diameter, x+radius};
-        int yPoints[] = {y, y+radius, y+diameter, y+radius, y};
+        int xPoints[] = {x+radius, x, x+radius, x+(radius*2), x+radius};
+        int yPoints[] = {y, y+radius, y+(radius*2), y+radius, y};
         int nPoints = 5;
         dpg.drawPolyline(xPoints, yPoints, nPoints);
 
         // adding inside circles
-        while(count<=7)
+        for (int i = 1; i <= 8; i++)
         {
             count += 1;
             dpg.drawOval(x, y, diameter, diameter);
 
-            x += radius/8;
-            y += radius/8;
-            diameter -= increment;
+            x = x + increment;
+            y = y + increment;
+            diameter = diameter - increment2;
 
         }
 
