@@ -10,7 +10,7 @@ public class Drawings
 {
     // This method creates 2 drawing panels and draws a scene in each
     public static void main( String[] args ) {
-        // Draws created image
+        // Draws personal image
         drawImage();
         // Draws provided image
         drawIllusions();
@@ -54,13 +54,13 @@ public class Drawings
         dpg.setColor(hills);
         dpg.fillOval(-35, 220, 400, 90);
 
-        // covering sunbeams 
+        // covering sunbeams with more hill
         int xPoints[] = {0, 0, 350, 700, 700};
         int yPoints[] = {700, 250, 250, 400, 700};
         int nPoints = 5;
         dpg.fillPolygon(xPoints, yPoints, nPoints);
 
-        // cloud
+        // cloud layers
         Color cloud1 = new Color(235, 235, 235);
         dpg.setColor(cloud1);
         dpg.fillOval(520, 50, 100, 120);
@@ -78,12 +78,11 @@ public class Drawings
         Color forground1 = new Color(87, 158, 89);
         dpg.setColor(forground1);
         dpg.fillArc(-560, 320, 1500, 400, 10, 120);
-
         Color forground2 = new Color(73, 135, 75);
         dpg.setColor(forground2);
         dpg.fillArc(-500, 380, 2000, 400, 60, 120);
 
-        // flower
+        // dandelion with seed petals
         Color stem = new Color(159, 255, 138);
         Color body = new Color(232, 215, 183);
         Color petles = new Color(235, 235, 235);
@@ -94,17 +93,17 @@ public class Drawings
 
         // printing my name at the bottom
         dpg.setColor(Color.WHITE);
-        String s = "Kai Richardson";
+        final String s = "Kai Richardson";
         dpg.drawString(s, 10, 490);
     }
 
-    // This method runs part 2 of HW
+    // This method runs part 2 of HW, creating a plane of Ehrenstein Illusions
     public static void drawIllusions() {
         // Set up the DrawingPanel object and get a reference to its Graphics
         DrawingPanel dp = new DrawingPanel(850 , 850);
         Graphics dpg = dp.getGraphics();
         dp.setBackground(Color.GRAY);
-       
+
         // drawing single disks
         triangleOfCircles(50, 300, 30, 1, dpg);
         triangleOfCircles(750, 50, 50, 1, dpg);
@@ -114,76 +113,61 @@ public class Drawings
         triangleOfCircles(135, 50, 25, 4, dpg);
         triangleOfCircles(215, 600, 70, 3, dpg);
         triangleOfCircles(725, 550, 20, 5, dpg);
-
-        // triangleOfCircles( 50,  50, 30, 1, dpg); // 1
-        // triangleOfCircles(100, 100, 31, 1, dpg); // 2
-        // triangleOfCircles(150, 150, 32, 1, dpg); // 3
-        // triangleOfCircles(200, 200, 33, 1, dpg); // 4
-        // triangleOfCircles(250, 250, 34, 1, dpg); // 5
-        // triangleOfCircles(300, 300, 35, 1, dpg); // 6
-        // triangleOfCircles(350, 350, 36, 1, dpg); // 7
-        // triangleOfCircles(400, 400, 37, 1, dpg); // 8
-        // triangleOfCircles(450, 450, 38, 5, dpg); // 9
-        
-
-        // drawDisks( 50,  50, 30, dpg); // 1
-        // drawDisks(100, 100, 31, dpg); // 2
-        // drawDisks(150, 150, 32, dpg); // 3
-        // drawDisks(200, 200, 33, dpg); // 4
-        // drawDisks(250, 250, 34, dpg); // 5
-        // drawDisks(300, 300, 35, dpg); // 6
-        // drawDisks(350, 350, 36, dpg); // 7
-        // drawDisks(400, 400, 37, dpg); // 8
-        // drawDisks(450, 450, 38, dpg); // 9
     }
+
     // This method draws a disk with concentric circles and a box inside
     public static void drawDisks(int x, int y, int radius, Graphics dpg)
     {        
-        // adding vars
-        //int diameter = radius * 2;
-        int smallRad = (int) (radius*0.2);
-        int increment = (radius - smallRad) / 8;
+        // adding number of circles in disk and diameter of disk
+        final int circleNum = 8;
+        int circleDiameter = radius*2;
         
-        // centering oval
+        // the radius of the smallest center circle 
+        final double smallRad = (radius /circleNum);
+
+        // the spaceing between the rings
+        int increment = (int) (radius + smallRad) /circleNum;
+
+        // centering the disk on the provided x,y cord
         x -= radius;
         y -= radius;
 
-        //adding color to circles
+        //adding color to circles and box
         dpg.setColor(Color.YELLOW);
-        dpg.fillOval(x, y, radius*2, radius*2);
+        dpg.fillOval(x, y, circleDiameter, circleDiameter);
         dpg.setColor(Color.BLACK);
 
         // adding box inside circle 
-        int xPoints[] = {x+radius, x, x+radius, x+(radius*2), x+radius};
-        int yPoints[] = {y, y+radius, y+(radius*2), y+radius, y};
+        int xPoints[] = {x+radius, x, x+radius, x+(circleDiameter), x+radius};
+        int yPoints[] = {y, y+radius, y+(circleDiameter), y+radius, y};
         int nPoints = 5;
         dpg.drawPolyline(xPoints, yPoints, nPoints);
 
-        int count = 0;
-        // adding inside circles
-        for (int i = 1; i <= 8; i++)
+        // adding inside rings
+        for (int i = 0; i <= circleNum; i++)
         {
-            count += 1;
-            dpg.drawOval(x, y, radius*2, radius*2);
-
-            x = x + increment;
-            y = y + increment;
-            radius = radius - increment;
-
+            dpg.drawOval(x, y, circleDiameter, circleDiameter);
+            // modifying info after print
+            x += increment;
+            y += increment;
+            circleDiameter -= increment*2;
         }
-
     }
+
     // This method draws a triangle made of disks from the 'drawDisks' method
     public static void triangleOfCircles(int x, int y, int radius, int rows, Graphics dpg)
     {   
         for (int i = 1; i < rows +1; i++)
         {
+            // keeping disk x cord separate from trangle x cord
             int x2 = x; 
             for (int j = 1; j < i +1; j++)
             {
+                //printing all disks in current row, mod after
                 drawDisks(x2, y, radius, dpg);
                 x2 += radius*2;
             }
+            // modifying triangle row x,y cord after print
             x -= radius;
             y += radius;
         }
@@ -192,9 +176,11 @@ public class Drawings
     // This method draws a burst of lines from a central point
     public static void drawCirclePoints(int points, double radius, int x1, int y1, Graphics dpg)
     {        
+        // creating a slice of PI, YUM!
         double slice = 2 * Math.PI / points;
         for (int i = 0; i < points; i++)
         {
+            // creating angle to draw line at, and mod on every loop befor print
             double angle = slice * i;
             int x2 = (int)(x1 + radius * Math.cos(angle));
             int y2 = (int)(y1 + radius * Math.sin(angle));
@@ -202,20 +188,3 @@ public class Drawings
         }
     }
 }
-/**
- * DrawingPanel methods:
- *   Graphics getGraphics()
- *   void setBackground(Color c)
- * 
- * Graphics methods:
- *   void drawLine(int x1, int y1, int x2, int y2)
- *   void drawOval(int x, int y, int width, int height)
- *   void drawRect(int x, int y, int width, int height)
- *   void fillOval(int x, int y, int width, int height)
- *   void fillRect(int x, int y, int width, int height)
- *   void drawString(String message, int x, int y)
- *   void setColor(Color c)
- *   void setFont( ... ) [see info in the text beginning on page 202]
- * 
-
- */
