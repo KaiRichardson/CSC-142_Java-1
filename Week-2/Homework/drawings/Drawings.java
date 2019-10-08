@@ -104,44 +104,53 @@ public class Drawings
         DrawingPanel dp = new DrawingPanel(850 , 850);
         Graphics dpg = dp.getGraphics();
         dp.setBackground(Color.GRAY);
-
+       
         // drawing single disks
-        //triangleOfCircles(50, 300, 30, 1, dpg);
-        //triangleOfCircles(750, 50, 50, 1, dpg);
-        //triangleOfCircles(525, 325, 90, 1, dpg);
+        triangleOfCircles(50, 300, 30, 1, dpg);
+        triangleOfCircles(750, 50, 50, 1, dpg);
+        triangleOfCircles(525, 325, 90, 1, dpg);
 
         // drawing the triangles of disks
-        //triangleOfCircles(135, 50, 25, 4, dpg);
-        //triangleOfCircles(215, 600, 70, 3, dpg);
-        //triangleOfCircles(725, 550, 20, 5, dpg);
+        triangleOfCircles(135, 50, 25, 4, dpg);
+        triangleOfCircles(215, 600, 70, 3, dpg);
+        triangleOfCircles(725, 550, 20, 5, dpg);
 
+        // triangleOfCircles( 50,  50, 30, 1, dpg); // 1
+        // triangleOfCircles(100, 100, 31, 1, dpg); // 2
+        // triangleOfCircles(150, 150, 32, 1, dpg); // 3
+        // triangleOfCircles(200, 200, 33, 1, dpg); // 4
+        // triangleOfCircles(250, 250, 34, 1, dpg); // 5
+        // triangleOfCircles(300, 300, 35, 1, dpg); // 6
+        // triangleOfCircles(350, 350, 36, 1, dpg); // 7
+        // triangleOfCircles(400, 400, 37, 1, dpg); // 8
+        // triangleOfCircles(450, 450, 38, 5, dpg); // 9
         
-        triangleOfCircles( 50,  50, 30, 1, dpg); // 1
-        triangleOfCircles(100, 100, 31, 1, dpg); // 2
-        triangleOfCircles(150, 150, 32, 1, dpg); // 3
-        triangleOfCircles(200, 200, 33, 1, dpg); // 4
-        triangleOfCircles(250, 250, 34, 1, dpg); // 5
-        triangleOfCircles(300, 300, 35, 1, dpg); // 6
-        triangleOfCircles(350, 350, 36, 1, dpg); // 7
-        triangleOfCircles(400, 400, 37, 1, dpg); // 8
-        triangleOfCircles(450, 450, 38, 5, dpg); // 9
+
+        // drawDisks( 50,  50, 30, dpg); // 1
+        // drawDisks(100, 100, 31, dpg); // 2
+        // drawDisks(150, 150, 32, dpg); // 3
+        // drawDisks(200, 200, 33, dpg); // 4
+        // drawDisks(250, 250, 34, dpg); // 5
+        // drawDisks(300, 300, 35, dpg); // 6
+        // drawDisks(350, 350, 36, dpg); // 7
+        // drawDisks(400, 400, 37, dpg); // 8
+        // drawDisks(450, 450, 38, dpg); // 9
     }
     // This method draws a disk with concentric circles and a box inside
     public static void drawDisks(int x, int y, int radius, Graphics dpg)
     {        
         // adding vars
-        int diameter = radius * 2;
-        int count = 0;
-        int ringRadius = radius;
-        int increment = radius/4;
-        int increment2 = radius/2;
-        // centering oval
-        //x -= radius;
-        //y -= radius;
+        //int diameter = radius * 2;
+        int smallRad = (int) (radius*0.2);
+        int increment = (radius - smallRad) / 8;
         
+        // centering oval
+        x -= radius;
+        y -= radius;
+
         //adding color to circles
         dpg.setColor(Color.YELLOW);
-        dpg.fillOval(x, y, diameter, diameter);
+        dpg.fillOval(x, y, radius*2, radius*2);
         dpg.setColor(Color.BLACK);
 
         // adding box inside circle 
@@ -150,15 +159,16 @@ public class Drawings
         int nPoints = 5;
         dpg.drawPolyline(xPoints, yPoints, nPoints);
 
+        int count = 0;
         // adding inside circles
         for (int i = 1; i <= 8; i++)
         {
             count += 1;
-            dpg.drawOval(x, y, diameter, diameter);
+            dpg.drawOval(x, y, radius*2, radius*2);
 
             x = x + increment;
             y = y + increment;
-            diameter = diameter - increment2;
+            radius = radius - increment;
 
         }
 
@@ -168,16 +178,14 @@ public class Drawings
     {   
         for (int i = 1; i < rows +1; i++)
         {
-            //int x2 = x; 
-            //int y2 = y; 
+            int x2 = x; 
             for (int j = 1; j < i +1; j++)
             {
-                drawDisks(x, y, radius, dpg);
-                //x += radius;
-                //y += radius;
+                drawDisks(x2, y, radius, dpg);
+                x2 += radius*2;
             }
-            //x -= radius;
-            //y += radius;
+            x -= radius;
+            y += radius;
         }
     }
 
