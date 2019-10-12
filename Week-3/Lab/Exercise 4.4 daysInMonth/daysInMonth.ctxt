@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.target=daysInMonth
 comment0.text=\r\n\ Write\ a\ method\ named\ daysInMonth\ that\ accepts\ a\ month\ (an\ integer\ between\ 1\ and\ 12)\r\n\ as\ a\ parameter\ and\ returns\ the\ number\ of\ days\ in\ that\ month\ in\ this\ year.\r\n\ For\ example,\ the\ call\ daysInMonth(9)\ would\ return\ 30\ because\ September\ has\ 30\ days.\r\n\ Assume\ that\ the\ code\ is\ not\ being\ run\ during\ a\ leap\ year\ (that\ February\ always\ has\ 28\ days).\r\n\r\n\ @author\ Kai\ Richardson\r\n\ @version\ 1\r\n
-numComments=1
+comment1.params=month
+comment1.target=int\ daysInMonth(int)
+numComments=2
