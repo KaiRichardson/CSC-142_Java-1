@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TestMyMath
+comment0.text=\r\n\ This\ simple\ class\ is\ part\ of\ a\ two-class\ demonstration\ project.\r\n\ To\ use\ this\ class,\ place\ this\ file\ and\ the\ MyMath.java\ file\r\n\ together\ in\ the\ same\ folder\ on\ your\ computer,\ then\ the\ folder\ \r\n\ in\ BlueJ.\r\n\ \r\n\ This\ is\ an\ example\ of\ a\ class\ that\ creates\ a\ simple\ user\r\n\ interface.\ \ This\ class\ USES\ (is\ a\ "client"\ of)\ the\ 'cubeRoot'\r\n\ method\ in\ class\ MyMath.\ \ Separating\ code\ that\ creates\ a\ user\r\n\ interface\ from\ code\ that\ performs\ computations\ and\ other\ tasks\r\n\ is\ good\ design\ practice.\r\n\ \r\n\ @author\ csc142\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ This\ is\ a\ simple\ user\ interface\ that\ accepts\ a\ series\ of\ \r\n\ numbers\ from\ the\ user\ and\ shows\ the\ cube\ root\ of\ each\ \r\n\ number.\ \ In\ this\ version,\ the\ user\ MUST\ enter\ a\ number\r\n\ or\ the\ program\ will\ crash.\ \ In\ a\ future\ version,\ we'll\ \r\n\ see\ how\ we\ can\ handle\ the\ situation\ where\ the\ user\ enters\r\n\ something\ other\ than\ a\ number\ by\ mistake.\r\n
+comment2.params=in
+comment2.target=double\ getValue(java.util.Scanner)
+comment2.text=\r\n\ Returns\ user\ input\ that\ is\ >\=\ 0\ or\ EXIT.\ \r\n\ Performs\ input\ validation.\ Keeps\ asking\ until\ input\ is\ valid\r\n\ PRECONDITION\ -\ a\ prompt\ has\ already\ been\ displayed\ to\ the\ user\r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ the\ user\ input\ guaranteed\ to\ be\ either\ positive\ or\ EXIT\r\n
+comment3.params=in
+comment3.target=double\ getDouble(java.util.Scanner)
+comment3.text=\r\n\ Returns\ user\ input\ of\ a\ double.\r\n\ Performs\ input\ validation.\ Keeps\ asking\ until\ input\ is\ valid\r\n\ PRECONDITION\ -\ a\ prompt\ has\ already\ been\ displayed\ to\ the\ user\r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ the\ user\ input\r\n
+numComments=4
