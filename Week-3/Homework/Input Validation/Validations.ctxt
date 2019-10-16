@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Validations
+comment0.text=\r\n\ This\ class\ implements\ 2\ static\ methods\r\n\ 1.\ validate\ that\ a\ String\ represents\ a\ valid\ 5-digit\ zip\ code.\r\n\ 2.\ validate\ that\ a\ String\ represents\ a\ valid\ 10-digit\ phone\ number.\r\n\ \r\n\ @author\ \ \ \ \ \ Kai\ Richardson\ <kairichardson2000@gmail.com>\r\n\ @version\ \ \ \ \ 1.0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ @since\ \ \ \ \ \ \ 1.0\ \ \ \ \ \ \r\n
+comment1.params=zip
+comment1.target=java.lang.String\ validateZipCode(java.lang.String)
+comment1.text=\r\n\ Validates\ that\ a\ String\ represents\ a\ valid\ 5-digit\ zip\ code\r\n\ @param\ zip,\ the\ String\ to\ work\ with\ --\ must\ be\ 5\ char\ long\r\n\ @throws\ new\ IllegalArgumentException\ if\ length\ of\ zip\ \!\=\ 5\r\n\ @throws\ new\ IllegalArgumentException\ if\ the\ loop\ finds\ a\ letter\ in\ zip\r\n\ @returns\ primitive\ int\ of\ the\ provided\ zip\ code\r\n
+comment2.params=num
+comment2.target=java.lang.String\ validatePhoneNumber(java.lang.String)
+comment2.text=\r\n\ Validates\ that\ a\ String\ represents\ a\ valid\ 10-digit\ phone\ number\r\n\ @param\ num,\ the\ String\ to\ work\ with\ --\ must\ be\ 12\ char\ long,\ formated\:\ NPA-NXX-XXXX\r\n\ @throws\ new\ IllegalArgumentException\ if\ num\ length\ \!\=\ 12\r\n\ @throws\ new\ IllegalArgumentException\ if\ index\ 3\ or\ 7\ \!\=\ '-'\r\n\ @throws\ new\ IllegalArgumentException\ if\ num\ contains\ any\ letters\r\n\ @throws\ new\ IllegalArgumentException\ if\ N\ \!\=\ between\ 2\ and\ 9\r\n\ @throws\ new\ IllegalArgumentException\ if\ P\ \!\=\ between\ 0\ and\ 8\r\n\ @throws\ new\ IllegalArgumentException\ if\ index\ 4\ and\ 5\ both\ \=\=\ 1\r\n\ @returns\ primitive\ int\ of\ the\ provided\ zip\ code\r\n
+numComments=3
