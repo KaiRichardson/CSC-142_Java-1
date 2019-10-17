@@ -5,8 +5,8 @@ import java.util.Scanner;
  * 2. validate that a String represents a valid 10-digit phone number.
  * 
  * @author      Kai Richardson <kairichardson2000@gmail.com>
- * @version     1.0                 
- * @since       1.0      
+ * @version     1.0
+ * @since       1.0
  */
 public class Validations
 {

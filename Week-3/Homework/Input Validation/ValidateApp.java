@@ -1,76 +1,95 @@
 import java.util.Scanner;
 /**
- * This simple class is part of a two-class demonstration project.
- * To use this class, place this file and the MyMath.java file
- * together in the same folder on your computer, then the folder 
- * in BlueJ.
+ * This class runs a program that gets user input using the Scanner class and validates and zipcode or
+ * a phone number
  * 
- * This is an example of a class that creates a simple user
- * interface.  This class USES (is a "client" of) the 'cubeRoot'
- * method in class MyMath.  Separating code that creates a user
- * interface from code that performs computations and other tasks
- * is good design practice.
- * 
- * @author csc142
+ * @author      Kai Richardson <kairichardson2000@gmail.com>
+ * @version     1.0
+ * @since       1.0
  */
 public class ValidateApp
 {
-    private static final int EXIT = -1;
     /**
-     * This is a simple user interface that accepts a series of 
-     * numbers from the user and shows the cube root of each 
-     * number.  In this version, the user MUST enter a number
-     * or the program will crash.  In a future version, we'll 
-     * see how we can handle the situation where the user enters
-     * something other than a number by mistake.
+     * Validates that a String represents a valid 5-digit zip code
+     * @param zip, the String to work with -- must be 5 char long
+     * @throws new IllegalArgumentException if length of zip != 5
+     * @throws new IllegalArgumentException if the loop finds a letter in zip
+     * @returns primitive int of the provided zip code
      */
     public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in); 
 
-        Scanner keyboard = new Scanner(System.in); // construct a Scanner to get user input
-        System.out.println("This program will calculate the fourth root of each number"
-            + " you enter.  Be sure to enter only numbers.\n");
-        System.out.print("Enter a positive number, or " + EXIT + " to quit: ");
-        double x = getValue(keyboard);
-        // testing for eqa
-        while (x != EXIT) {
-            double root = MyMath.fourthRoot(x);
-            root = Math.round(root * 1000.0) / 1000.0;  // round result to 3 places
-            System.out.println("The fourth root of " + x + " is " + root + "\n");
-            System.out.print("Enter another positive number, or " + EXIT + " to quit: ");
-            x = getValue(keyboard);
+        // Display a 1 line introduction to the user
+        System.out.println("This program can validate your 5-digit zip code or 10-digit phone number\n\n");
+
+        // Display a menu with 4 options
+        menu();
+
+        // Prompt the user to input an option
+        System.out.println("Please pick an option from the menu above.\n");
+
+        // prints error message and re-prompts on user entering invalid menu option
+        int x = getChoice(keyboard);
+
+        // Prompt the user for the required input and then display the results
+        // Repeat the main menu until the user enters the option to quit
+        while (x != 4) {            
+            switch (x) {
+                case 1:
+                System.out.println("Please enter your 5-digit zip code");
+                String num = Validations.validateZipCode(keyboard.nextLine());
+                if(num){
+                    System.out.println("Please enter your 5-digit zip code");
+                } else {
+                    
+                }
+
+                break;
+                case 2:
+                System.out.println("Today is Sunday");
+                break;
+                case 3:
+                System.out.println("Today is Sunday");
+                break;
+                case 4:
+                System.out.println("Today is Sunday");
+                break;
+                // prints error message and re-prompts on user entering invalid menu option
+                default:
+                System.out.println("please enter a valid selection");
+            }
+            x = getChoice(keyboard);
         }
+
         System.out.println("Good-bye");
     }
 
     /**
-     * Returns user input that is >= 0 or EXIT. 
      * Performs input validation. Keeps asking until input is valid
      * PRECONDITION - a prompt has already been displayed to the user
      * @param in the input stream
-     * @return the user input guaranteed to be either positive or EXIT
+     * @return user input that is >= 0 or EXIT
      */
-    public static double getValue(Scanner in) {
-        double userInput = getDouble(in);
-        while (userInput <= 0 && userInput != EXIT){
-            System.out.print("Error. Please enter either a positive number or " + EXIT + ": ");
-            userInput = getDouble(in);
+    public static int getChoice(Scanner in) {
+        int x = in.nextInt();
+        while (x <= 0 && x >= 5 && x != 4){
+            System.out.print("Error. Please enter a valid choice:\n\n");
+            menu();
         }
-        return userInput;
+        return x;
     }
 
     /**
-     * Returns user input of a double.
-     * Performs input validation. Keeps asking until input is valid
-     * PRECONDITION - a prompt has already been displayed to the user
-     * @param in the input stream
-     * @return the user input
+     * Prints a menu with 4 options
+     * PRECONDITION - an action has been finalized
+     * @param none
+     * @return none
      */
-    public static double getDouble(Scanner in) {
-
-        while (!in.hasNextDouble()) {
-            in.next(); // remove this token from the input stream and reprompt
-            System.out.print("Error. Please enter a double: ");
-        }
-        return in.nextDouble();
+    public static void menu() {
+        System.out.println(
+              "1. validate my zip code\n"
+            + "2. validate my phone number\n"
+            + "3. instructions\n"
+            + "4. quit\n\n");
     }
 }

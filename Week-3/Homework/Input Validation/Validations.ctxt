@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Validations
-comment0.text=\r\n\ This\ class\ implements\ 2\ static\ methods\r\n\ 1.\ validate\ that\ a\ String\ represents\ a\ valid\ 5-digit\ zip\ code.\r\n\ 2.\ validate\ that\ a\ String\ represents\ a\ valid\ 10-digit\ phone\ number.\r\n\ \r\n\ @author\ \ \ \ \ \ Kai\ Richardson\ <kairichardson2000@gmail.com>\r\n\ @version\ \ \ \ \ 1.0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ @since\ \ \ \ \ \ \ 1.0\ \ \ \ \ \ \r\n
+comment0.text=\r\n\ This\ class\ implements\ 2\ static\ methods\r\n\ 1.\ validate\ that\ a\ String\ represents\ a\ valid\ 5-digit\ zip\ code.\r\n\ 2.\ validate\ that\ a\ String\ represents\ a\ valid\ 10-digit\ phone\ number.\r\n\ \r\n\ @author\ \ \ \ \ \ Kai\ Richardson\ <kairichardson2000@gmail.com>\r\n\ @version\ \ \ \ \ 1.0\r\n\ @since\ \ \ \ \ \ \ 1.0\r\n
 comment1.params=zip
 comment1.target=java.lang.String\ validateZipCode(java.lang.String)
 comment1.text=\r\n\ Validates\ that\ a\ String\ represents\ a\ valid\ 5-digit\ zip\ code\r\n\ @param\ zip,\ the\ String\ to\ work\ with\ --\ must\ be\ 5\ char\ long\r\n\ @throws\ new\ IllegalArgumentException\ if\ length\ of\ zip\ \!\=\ 5\r\n\ @throws\ new\ IllegalArgumentException\ if\ the\ loop\ finds\ a\ letter\ in\ zip\r\n\ @returns\ primitive\ int\ of\ the\ provided\ zip\ code\r\n
