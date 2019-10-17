@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=MyMath
-comment0.text=\r\n\ This\ simple\ class\ is\ part\ of\ a\ two-class\ demonstration\ project.\r\n\ To\ use\ this\ class,\ place\ this\ file\ and\ the\ TestMyMath.java\ file\r\n\ together\ in\ the\ same\ folder\ on\ your\ computer,\ then\ open\ the\ folder\ in\ BlueJ\r\n\ \r\n\ This\ is\ an\ example\ of\ a\ class\ that\ provides\ tools\ that\ can\ be\r\n\ used\ by\ other\ classes,\ just\ like\ the\ Math\ class\ built\ into\ Java.\r\n\ MyMath\ is\ referred\ to\ as\ a\ SUPPLIER\ class,\ because\ it\ is\ supplying\ functionality.\r\n\ \r\n\ @author\ csc142\r\n
-comment1.params=num
-comment1.target=double\ fourthRoot(double)
-comment1.text=\r\n\ Computes\ the\ fourth\ root\ of\ a\ number.\ \r\n\ @param\ num\ the\ number\ to\ work\ with\ --\ must\ be\ >\=\ 0\r\n\ @throws\ new\ IllegalArgumentException\ if\ num\ is\ <\ 0\r\n\ @returns\ the\ 4th\ root\ of\ num\r\n
-numComments=2
