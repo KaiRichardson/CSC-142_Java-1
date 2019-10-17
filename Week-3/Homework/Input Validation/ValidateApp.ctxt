@@ -1,13 +1,25 @@
 #BlueJ class context
 comment0.target=ValidateApp
-comment0.text=\r\n\ This\ class\ runs\ a\ user\ interface\ \r\n\ \r\n\ @author\ \ \ \ \ \ Kai\ Richardson\ <kairichardson2000@gmail.com>\r\n\ @version\ \ \ \ \ 1.0\r\n\ @since\ \ \ \ \ \ \ 1.0\r\n
+comment0.text=\r\n\ This\ class\ runs\ a\ program\ that\ gets\ user\ input\ using\ the\ Scanner\ class\ and\ validates\ and\ zipcode\ or\r\n\ a\ phone\ number\r\n\ \r\n\ @author\ \ \ \ \ \ Kai\ Richardson\ <kairichardson2000@gmail.com>\r\n\ @version\ \ \ \ \ 1.0\r\n\ @since\ \ \ \ \ \ \ 1.0\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment1.text=\r\n\ This\ is\ a\ simple\ user\ interface\ that\ accepts\ a\ series\ of\ \r\n\ numbers\ from\ the\ user\ and\ shows\ the\ cube\ root\ of\ each\ \r\n\ number.\ \ In\ this\ version,\ the\ user\ MUST\ enter\ a\ number\r\n\ or\ the\ program\ will\ crash.\ \ In\ a\ future\ version,\ we'll\ \r\n\ see\ how\ we\ can\ handle\ the\ situation\ where\ the\ user\ enters\r\n\ something\ other\ than\ a\ number\ by\ mistake.\r\n
+comment1.text=\r\n\ Starts\ the\ application\ and\ calls\ the\ menu()\ method\r\n\ @param\ general\ args\r\n\ @throws\ none\r\n\ @returns\ none\r\n
 comment2.params=in
-comment2.target=double\ getValue(java.util.Scanner)
-comment2.text=\r\n\ Performs\ input\ validation.\ Keeps\ asking\ until\ input\ is\ valid\r\n\ PRECONDITION\ -\ a\ prompt\ has\ already\ been\ displayed\ to\ the\ user\r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ user\ input\ that\ is\ >\=\ 0\ or\ EXIT\r\n
+comment2.target=int\ getChoice(java.util.Scanner)
+comment2.text=\r\n\ Validates\ menu\ option\ selection\ 1\ -\ 4,\ Keeps\ asking\ until\ input\ is\ valid\r\n\ PRECONDITION\ -\ menu()\ is\ called\ \r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ user\ input\ that\ is\ 1\ -\ 4\r\n
 comment3.params=in
-comment3.target=double\ getDouble(java.util.Scanner)
-comment3.text=\r\n\ Performs\ input\ validation.\ Keeps\ asking\ until\ input\ is\ valid\r\n\ PRECONDITION\ -\ a\ prompt\ has\ already\ been\ displayed\ to\ the\ user\r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ user\ input\ of\ a\ double\r\n
-numComments=4
+comment3.target=int\ getInt(java.util.Scanner)
+comment3.text=\r\n\ Validates\ that\ menu\ option\ selection\ is\ a\ number,\ Keeps\ asking\ until\ input\ is\ valid\r\n\ PRECONDITION\ -\ getChoice()\ is\ called\ \r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ user\ input\ that\ is\ a\ number\ from\ 1\ -\ 4\r\n
+comment4.params=in
+comment4.target=void\ vZipCode(java.util.Scanner)
+comment4.text=\r\n\ Performs\ zip\ code\ length\ validation\ and\ then\ calls\ validateZipCode().\ \r\n\ PRECONDITION\ -\ user\ selects\ menu\ option\ 1\r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ none\r\n
+comment5.params=in
+comment5.target=void\ vPhoneNumber(java.util.Scanner)
+comment5.text=\r\n\ Performs\ phone\ number\ length\ validation\ and\ then\ calls\ validatePhoneNumber().\ \r\n\ PRECONDITION\ -\ user\ selects\ menu\ option\ 2\r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ none\r\n
+comment6.params=keyboard
+comment6.target=void\ menu(java.util.Scanner)
+comment6.text=\r\n\ Prints\ a\ menu\ with\ 4\ options,\ then\ calls\ method\ based\ on\ user\ input\r\n\ PRECONDITION\ -\ an\ action\ has\ been\ finalized\r\n\ @param\ in\ the\ input\ stream\r\n\ @return\ none\r\n
+comment7.params=in
+comment7.target=void\ instructions(java.util.Scanner)
+comment7.text=\r\n\ Prints\ instructions\ on\ how\ to\ formate\ a\ zip\ code\ and\ phone\ number\r\n\ PRECONDITION\ -\ user\ selects\ menu\ option\ 3\r\n\ @param\ none\r\n\ @return\ none\r\n
+numComments=8

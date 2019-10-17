@@ -17,7 +17,7 @@ public class Validations
      * @throws new IllegalArgumentException if the loop finds a letter in zip
      * @returns primitive int of the provided zip code
      */
-    public static String validateZipCode(String zip) {
+    public static boolean validateZipCode(String zip) {
         if (zip.length() != 5 ){
             throw new IllegalArgumentException("A zip code must have 5 numbers");
         } else {
@@ -27,7 +27,7 @@ public class Validations
                     throw new IllegalArgumentException("zip codes can only contain numbers");
                 }
             }
-            return zip;
+            return true;
         }
     }
 
@@ -42,7 +42,7 @@ public class Validations
      * @throws new IllegalArgumentException if index 4 and 5 both == 1
      * @returns primitive int of the provided zip code
      */
-    public static String validatePhoneNumber(String num) {
+    public static boolean validatePhoneNumber(String num) {
         if (num.length() != 12 || num.charAt(3) != '-' || num.charAt(7) != '-'){
             throw new IllegalArgumentException("Please use number format: XXX-XXX-XXXX");
         } else  {
@@ -54,14 +54,14 @@ public class Validations
                 }
             }
 
-            if (newNum.charAt(0)>'2' || newNum.charAt(0)<'9' || newNum.charAt(3)>'2' || newNum.charAt(3)<'9'){
+            if (newNum.charAt(0)<'2' || newNum.charAt(3)<'2'){
                 throw new IllegalArgumentException("The 1st and 4th number must start with a digit between 2 and 9");
-            } else if (newNum.charAt(1) > '0' || newNum.charAt(1) < '8'){
+            } else if (newNum.charAt(1) > '8'){
                 throw new IllegalArgumentException("The 2nd number must be a digit between 0 and 8");
             } else if (newNum.charAt(4) == '1' && newNum.charAt(5) == '1'){
                 throw new IllegalArgumentException("The 5th and 6th number cannot both be 1");
             } else {
-                return num;
+                return true;
             }
         }
     }
