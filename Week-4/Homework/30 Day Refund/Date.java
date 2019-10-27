@@ -60,7 +60,7 @@ public class Date
 
     /** <static methods> */
 
-    /*
+    /**
     + boolean isLegal( int month, int day, int year )  
      * returns true if these 3 values make up a valid date, false otherwise.  
      * Leap years are handled correctly.
@@ -106,15 +106,22 @@ public class Date
     + int getDay()
      * returns the day of this Date
      */
-    public static int getDay(){
-        return 
+    public int getDay(String date){
+        String[] dayS = date.split("/");
+        String day = dayS[1];
+        int dayInt = Integer.parseInt(day);	
+        return dayInt; 
     }
 
     /*
     + int getMonth()
      * returns the numeric value of the month of this Date
      */
-    public static int getMonth(){
+    public int getMonth(String date){
+        String[] monthS = date.split("/");
+        String month = monthS[1];
+        int monthInt = Integer.parseInt(month);	
+        return monthInt; 
     }
 
     /*
@@ -122,14 +129,58 @@ public class Date
      * returns the name of the month of this Date. 
      * The name starts with a capital letter, such as April or June.
      */
-    public static String getMonthName(){
+    public String getMonthName(int monthInt){
+        String monthString = "";
+        switch (monthInt) { 
+            case 1: 
+            monthString = "January"; 
+            break; 
+            case 2: 
+            monthString = "February"; 
+            break; 
+            case 3: 
+            monthString = "March"; 
+            break; 
+            case 4: 
+            monthString = "April"; 
+            break; 
+            case 5: 
+            monthString = "May"; 
+            break; 
+            case 6: 
+            monthString = "June"; 
+            break; 
+            case 7: 
+            monthString = "July"; 
+            break; 
+            case 8: 
+            monthString = "August"; 
+            break; 
+            case 9: 
+            monthString = "September"; 
+            break; 
+            case 10: 
+            monthString = "October"; 
+            break; 
+            case 11: 
+            monthString = "November"; 
+            break; 
+            case 12: 
+            monthString = "December"; 
+            break; 
+        }
+        return monthString;
     }
 
     /*
     + int getYear() 
      * returns the year of this Date
      */
-    public static int getYear() {
+    public int getYear(String date){
+        String[] yearS = date.split("/");
+        String year = yearS[3];
+        int yearInt = Integer.parseInt(year);	
+        return yearInt; 
     }
 
     /*
@@ -137,7 +188,7 @@ public class Date
      * returns this Date as a String of the form: mm/dd/yyyy.  
      * An example would be 02/20/1974  or 10/11/2020
      */
-    public static String toString() {
+    public static String tString() {
     }
 
     /*
