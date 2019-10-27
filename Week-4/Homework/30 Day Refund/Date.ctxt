@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Date
+comment0.text=\r\n\ This\ class\ provides\ utilities\ for\ date\ verification.\ \r\n\ \r\n\ @author\ \ \ \ \ \ Kai\ Richardson\ <kairichardson2000@gmail.com>\r\n\ @version\ \ \ \ \ 25/10/2019\r\n
+comment1.params=month\ day\ year
+comment1.target=Date(int,\ int,\ int)
+comment1.text=\ \r\n\ <constructor>\r\n\ \ \ \ +\ Date(\ int\ month,\ int\ day,\ int\ year\ )\ \r\n\ construct\ a\ Date\ object\ with\ the\ given\ state.\ \ \r\n\ If\ any\ of\ the\ parameter\ values\ are\ invalid,\ throw\ an\ IllegalArgumentException.\ \ \r\n\ Make\ sure\ that\ the\ exception\ contains\ a\ message\ specific\ to\ the\ problem.\r\n
+comment2.params=month\ day\ year
+comment2.target=boolean\ isLegal(int,\ int,\ int)
+comment2.text=\r\n\ \ \ \ <static\ methods>\r\n\ \ \ \ +\ boolean\ isLegal(\ int\ month,\ int\ day,\ int\ year\ )\ \ \r\n\ returns\ true\ if\ these\ 3\ values\ make\ up\ a\ valid\ date,\ false\ otherwise.\ \ \r\n\ Leap\ years\ are\ handled\ correctly.\r\n
+numComments=3

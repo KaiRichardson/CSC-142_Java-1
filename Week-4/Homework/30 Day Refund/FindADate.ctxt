@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=FindADate
+comment0.text=\r\n\ Top-level\ client\ --\ controls\ the\ application.\ \ This\ GUI\ program\ prompts\r\n\ the\ user\ for\ a\ date\ and\ then\ determines\ the\ date\r\n\ 30\ days\ in\ the\ future.\r\n\ <br>\r\n\ This\ is\ the\ file\ you\ need\ to\ modify\ to\ complete\ the\ assignment.\ The\ majority\r\n\ of\ your\ work\ will\ be\ in\ the\ method\ respondToUser(),\ though\ you\ may\ decide\r\n\ to\ add\ code\ in\ other\ places\ as\ well\r\n\ <br>\r\n\ To\ start\ the\ program,\ call\ the\ main()\ method.\r\n\ \r\n\ @author\ CSC\ 142\ \r\n\ @version\ 1-23-07\r\n
+comment1.params=
+comment1.target=FindADate()
+comment1.text=\r\n\ Create\ a\ new\ FindADate\ object\r\n
+comment2.params=
+comment2.target=void\ respondToUser()
+comment2.text=\r\n\ Perform\ the\ task\ of\ determining\ 30\ days\ from\ the\ given\ day.\r\n
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ Allows\ this\ application\ to\ be\ run\ as\ a\ stand-alone\ program,\ and\r\n\ also\ starts\ it\ up\ in\ a\ 'thread-safe"\ way.\r\n
+comment4.params=
+comment4.target=void\ run()
+numComments=5

@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ReadStrings
+comment0.text=\r\n\ Program\ to\ read\ in\ a\ text\ file\ and\ print\ out\ the\ number\ of\ characters\ for\ each\ "word"\r\n\ \r\n\ @author\ csc142\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=name
+comment2.target=void\ readInput(java.lang.String)
+comment2.text=\r\n\ method\ to\ read\ in\ text\ froma\ file\ and\ display\ each\ String\ and\ its\ length.\r\n\ @param\ name\ the\ name\ of\ the\ file\ to\ open\ for\ reading\r\n\ @throws\ FileNotFoundException\ if\ the\ file\ cannot\ be\ found\r\n
+numComments=3
