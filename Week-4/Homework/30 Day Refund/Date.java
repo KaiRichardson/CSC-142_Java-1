@@ -188,7 +188,9 @@ public class Date
      * returns this Date as a String of the form: mm/dd/yyyy.  
      * An example would be 02/20/1974  or 10/11/2020
      */
-    public static String tString() {
+    public String tString(int monthInt, int dayInt, int yearInt) {
+        String dateString = monthInt + "/" + dayInt + "/" + yearInt;
+        return dateString;
     }
 
     /*
@@ -197,7 +199,8 @@ public class Date
      * A valid parameter is in the range [1, 31].  
      * Throw an IllegalArgumentException if the parameter is invalid.
      */
-    public static Date daysFromDate( int days ) {
+    public Date daysFromDate( int days ) {
+        
     }
 
     /** <mutator methods> */ 
@@ -208,7 +211,7 @@ public class Date
      * update the day of this Date. 
      * If the parameter value is invalid, throw an IllegalArgumentException. 
      */
-    public static void setDay( int day) {
+    public void setDay( int day) {
     }
 
     /*
@@ -216,7 +219,7 @@ public class Date
      * update the month of this Date.  
      * If the parameter value is invalid, throw an IllegalArgumentException. 
      */
-    public static void setMonth( int mth) {
+    public void setMonth( int mth) {
     }
 
     /*
@@ -224,6 +227,6 @@ public class Date
      * update the year of this Date. 
      * If the parameter value is invalid, throw an IllegalArgumentException. 
      */
-    public static void setYear( int yr) {
+    public void setYear( int yr) {
     }
 }
