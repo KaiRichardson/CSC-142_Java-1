@@ -7,9 +7,9 @@ import java.util.*;
  */
 public class Date
 {
-    int dateDay;
-    int dateMonth;
-    int dateYear;
+    int day;
+    int month;
+    int year;
 
     /** <constructors> */
 
@@ -26,32 +26,32 @@ public class Date
             if (month == 2) {
                 // Day validation - The day must be legal for the month
                 if(day > 0 && day <= 28){
-                    dateDay = day;
+                    this.day = day;
                 } else {
                     throw new IllegalArgumentException("Must be a valid day of selected month"); 
                 }
-                dateMonth = month;
+                this.month = month;
             } else if (month == 4 || month == 6 || month == 9 || month == 11) {
                 // Day validation - The day must be legal for the month
                 if(day > 0 && day <= 30){
-                    dateDay = day;
+                    this.day = day;
                 } else {
                     throw new IllegalArgumentException("Must be a valid day of selected month"); 
                 }
-                dateMonth = month;
+                this.month = month;
             } else if (month == 1 || month == 3 || month == 5 || month == 7 
             || month == 8 || month == 10 || month == 12){
                 // Day validation - The day must be legal for the month
                 if(day > 0 && day <= 31){
-                    dateDay = day;
+                    this.day = day;
                 } else {
                     throw new IllegalArgumentException("Must be a valid day of selected month"); 
                 }
-                dateMonth = month;
+                this.month = month;
             } else {
                 throw new IllegalArgumentException("Must be a valid month of selected year");
             }
-            dateYear = year;
+            this.year = year;
         } else {
             throw new IllegalArgumentException("Must be valid year after 1600"); 
         }
@@ -106,32 +106,56 @@ public class Date
     + int getDay()
      * returns the day of this Date
      */
-    public int getDay(String date){
-        String[] dayS = date.split("/");
-        String day = dayS[1];
-        int dayInt = Integer.parseInt(day);	
-        return dayInt; 
+    public int getDay(){
+        return day; 
     }
 
-    /*
+    /**
     + int getMonth()
      * returns the numeric value of the month of this Date
      */
-    public int getMonth(String date){
-        String[] monthS = date.split("/");
-        String month = monthS[1];
-        int monthInt = Integer.parseInt(month);	
-        return monthInt; 
+    public int getMonth(){
+        // int month = Integer.parseInt(month); 
+        return month; 
     }
 
-    /*
+    /**
+    + int getYear() 
+     * returns the year of this Date
+     */
+    public int getYear(){ 
+        return year; 
+    }
+
+    /**
+    + String toString() 
+     * returns this Date as a String of the form: mm/dd/yyyy.  
+     * An example would be 02/20/1974  or 10/11/2020
+     */
+    public String toString() {
+        String dayString = "";
+        String monthString = "";
+        String yearString = String.valueOf(year);
+        
+        if (day < 10){
+            dayString = "0" + day;
+        } 
+
+        if (day < 10){
+            monthString = "0" + month;
+        }
+        String dateString = dayString + "/" + monthString + "/" + yearString;
+        return dateString;
+    } 
+
+    /**
     + String getMonthName()
      * returns the name of the month of this Date. 
      * The name starts with a capital letter, such as April or June.
      */
-    public String getMonthName(int monthInt){
+    public String getMonthName(){
         String monthString = "";
-        switch (monthInt) { 
+        switch (month) { 
             case 1: 
             monthString = "January"; 
             break; 
@@ -172,41 +196,48 @@ public class Date
         return monthString;
     }
 
-    /*
-    + int getYear() 
-     * returns the year of this Date
-     */
-    public int getYear(String date){
-        String[] yearS = date.split("/");
-        String year = yearS[3];
-        int yearInt = Integer.parseInt(year);	
-        return yearInt; 
-    }
-
-    /*
-    + String toString() 
-     * returns this Date as a String of the form: mm/dd/yyyy.  
-     * An example would be 02/20/1974  or 10/11/2020
-     */
-    public String tString(int monthInt, int dayInt, int yearInt) {
-        String dateString = monthInt + "/" + dayInt + "/" + yearInt;
-        return dateString;
-    }
-
-    /*
+    /**
     + Date daysFromDate( int days ) 
      * returns a new Date that is "days" in the future from this Date.  
      * A valid parameter is in the range [1, 31].  
      * Throw an IllegalArgumentException if the parameter is invalid.
-     */
+    
     public Date daysFromDate( int days ) {
-        
+        if (days < 1 || days > 31){
+            throw new IllegalArgumentException("days in the future must be between 1-31"); 
+        } else {
+            day = getDay();
+            int futureDay = day + days;
+
+            month = getMonth();
+            int daysInMonth = 0;
+            if (month == 2) {
+                daysInMonth = 28;
+            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                daysInMonth = 30;
+            } else {
+                daysInMonth = 31;
+            }
+
+            year = getYear();
+            if(futureDay > daysInMonth){
+                day = futureDay - daysInMonth;
+                if (month == 12){
+                    month = 1;
+                    year += 1;
+                } else {
+                    month += 1;
+                }
+            }
+        }
+        String futureDate = day + "/" + month + "/" + year;
+        return futureDate;
     }
+    */
 
     /** <mutator methods> */ 
 
-    /*
-
+    /**
     + void setDay( int day) 
      * update the day of this Date. 
      * If the parameter value is invalid, throw an IllegalArgumentException. 
@@ -214,7 +245,7 @@ public class Date
     public void setDay( int day) {
     }
 
-    /*
+    /**
     + void setMonth( int mth) 
      * update the month of this Date.  
      * If the parameter value is invalid, throw an IllegalArgumentException. 
@@ -222,7 +253,7 @@ public class Date
     public void setMonth( int mth) {
     }
 
-    /*
+    /**
     + void setYear( int yr) 
      * update the year of this Date. 
      * If the parameter value is invalid, throw an IllegalArgumentException. 
