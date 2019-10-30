@@ -243,6 +243,7 @@ public class Date
      * If the parameter value is invalid, throw an IllegalArgumentException. 
      */
     public void setDay( int day) {
+        this.day = day;
     }
 
     /**
@@ -251,6 +252,7 @@ public class Date
      * If the parameter value is invalid, throw an IllegalArgumentException. 
      */
     public void setMonth( int mth) {
+        this.month = mth;
     }
 
     /**
@@ -259,5 +261,6 @@ public class Date
      * If the parameter value is invalid, throw an IllegalArgumentException. 
      */
     public void setYear( int yr) {
+        this.year = yr;
     }
 }
