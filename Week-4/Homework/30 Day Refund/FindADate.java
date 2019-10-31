@@ -15,6 +15,7 @@
 public class FindADate 
 {
     private UserWindow window;
+    private Date date;
 
     /**
      * Create a new FindADate object
@@ -28,7 +29,21 @@ public class FindADate
      */
     public void respondToUser()
     {
-       System.out.println("You've downloaded and compiled correctly");
+       
+       int daySelect = window.getDayInput();
+       
+       String monthSelect = window.getMonthInput();
+       int monthInt = date.getMonth(monthSelect);
+       
+       int yearSelect = window.getYearInput();
+       
+       date = new Date(daySelect, monthInt, yearSelect);
+       
+       //date.toString();
+       System.out.println("You've selected: " + daySelect + "/" + monthInt + "/" + yearSelect);
+       //System.out.println(date);
+       // window.displayErrorWindow("Error");
+       window.displayText("hello");
     }
     
 // NO NEED TO CHANGE ANY CODE BELOW THIS LINE.

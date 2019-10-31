@@ -7,6 +7,7 @@ import java.util.*;
  */
 public class Date
 {
+    private UserWindow window;
     int day;
     int month;
     int year;
@@ -114,8 +115,46 @@ public class Date
     + int getMonth()
      * returns the numeric value of the month of this Date
      */
-    public int getMonth(){
-        // int month = Integer.parseInt(month); 
+    public int getMonth(String monthString){
+        int month = 0;
+        switch (monthString) { 
+            case "January": 
+            month = 1; 
+            break; 
+            case "February": 
+            month = 2; 
+            break; 
+            case "March": 
+            month = 3; 
+            break; 
+            case "April": 
+            month = 4; 
+            break; 
+            case "May": 
+            month = 5; 
+            break; 
+            case "June": 
+            month = 6; 
+            break; 
+            case "July": 
+            month = 7; 
+            break; 
+            case "August": 
+            month = 8; 
+            break; 
+            case "September": 
+            month = 9; 
+            break; 
+            case "October": 
+            month = 10; 
+            break; 
+            case "November": 
+            month = 11; 
+            break; 
+            case "December": 
+            month = 12; 
+            break; 
+        }
         return month; 
     }
 

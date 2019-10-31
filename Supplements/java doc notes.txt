@@ -1,0 +1,115 @@
+CLASS:
+
+/**
+ * @author      Firstname Lastname <address @ example.com>
+ * @version     1.6                 (current version number of program)
+ * @since       1.2          (the version of the package this class was first added to)
+ */
+
+/**
+ * This class implements 2 static methods
+ * 1. validate that a String represents a valid 5-digit zip code.
+ * 2. validate that a String represents a valid 10-digit phone number.
+ * 
+ * @author      Kai Richardson <kairichardson2000@gmail.com>
+ * @version     25/10/2019
+ */
+
+
+
+METHOD: 
+
+/**
+ * Short one line description.                           (1)
+ * <p>
+ * Longer description. If there were any, it would be    (2)
+ * here.
+ * </p>
+ * And even more explanations to follow in consecutive
+ * paragraphs separated by HTML paragraph breaks.
+ *
+ * @param  variable Description text text text.          (3)
+ * @return Description text text text.
+ */
+
+/**
+* Validates that a String represents a valid 5-digit zip code
+* @param zip, the String to work with -- must be 5 char long
+* @throws new IllegalArgumentException if length of zip != 5
+* @throws new IllegalArgumentException if the loop finds a letter in zip
+* @returns primitive int of the provided zip code
+*/
+
+
+
+
+
+EXAMPLE METHOD:
+
+/**
+ * Validates a chess move.
+ *
+ * <p>Use {@link #doMove(int theFromFile, int theFromRank, int theToFile, int theToRank)} to move a piece.
+ *
+ * @param theFromFile file from which a piece is being moved
+ * @param theFromRank rank from which a piece is being moved
+ * @param theToFile   file to which a piece is being moved
+ * @param theToRank   rank to which a piece is being moved
+ * @return            true if the move is valid, otherwise false
+ */
+boolean isValidMove(int theFromFile, int theFromRank, int theToFile, int theToRank) {
+    // ...body
+}
+
+/**
+ * Moves a chess piece.
+ *
+ * @see java.math.RoundingMode
+ */
+void doMove(int theFromFile, int theFromRank, int theToFile, int theToRank)  {
+    // ...body
+}
+
+
+
+
+
+REF:
+
+Tag & Parameter:		Usage:		
+					Applies to:
+					
+@author John Smith		Describes an author.	
+					Class, Interface, Enum	
+{@docRoot}			Represents the relative path to the generated document's root directory from any generated page.								Class, Interface, Enum, Field, Method	
+@version version		Provides software version entry. Max one per Class or Interface.	
+					Class, Interface, Enum	
+@since since-text		Describes when this functionality has first existed.	
+					Class, Interface, Enum, Field, Method	
+@see reference			Provides a link to other element of documentation.	
+					Class, Interface, Enum, Field, Method	
+@param name description		Describes a method parameter.	
+					Method	
+@return description		Describes the return value.	
+					Method	
+@exception classname description
+@throws classname description	Describes an exception that may be thrown from this method.	
+					Method	
+@deprecated description		Describes an outdated method.	
+					Class, Interface, Enum, Field, Method	
+{@inheritDoc}			Copies the description from the overridden method.	
+					Overriding Method	
+{@link reference}		Link to other symbol.	
+					Class, Interface, Enum, Field, Method	
+{@linkplain reference}		Identical to {@link}, except the link's label is displayed in plain text than code font.									Class, Interface, Enum, Field, Method	
+{@value #STATIC_FIELD}		Return the value of a static field.	
+					Static Field	
+{@code literal}			Formats literal text in the code font. It is equivalent to <code>{@literal}</code>.	
+					Class, Interface, Enum, Field, Method	1.5.0
+{@literal literal}		Denotes literal text. The enclosed text is interpreted as not containing HTML markup or nested javadoc tags.						Class, Interface, Enum, Field, Method	1.5.0
+{@serial literal}		Used in the doc comment for a default serializable field.	
+					Field	
+{@serialData literal}		Documents the data written by the writeObject( ) or writeExternal( ) methods.	
+					Field, Method	
+{@serialField literal}		Documents an ObjectStreamField component.	
+					Field
