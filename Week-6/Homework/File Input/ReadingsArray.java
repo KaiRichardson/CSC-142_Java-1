@@ -16,6 +16,7 @@ public class ReadingsArray
     // <public var> //
     String filename;
     Scanner input;
+    RGBReading[] arr;
 
     // <constructor> //
     /**
@@ -46,8 +47,8 @@ public class ReadingsArray
         // reading second line
         int count = getCount();
 
-        RGBReading[] arr = new RGBReading[count];
-        load(arr, input);
+        arr = new RGBReading[count];
+        load(input);
         // as long as there is another String to read
 
         input.close();
@@ -59,9 +60,9 @@ public class ReadingsArray
      *
      * @param a The array being passed in.
      */
-    private static void load(RGBReading[] a, Scanner input) 
+    private void load(Scanner input) 
     {
-        for(int i = 0; i < a.length; i++){
+        for(int i = 0; i < arr.length; i++){
             String name = input.next();  
 
             float R = Integer.parseInt(input.next()); 
@@ -71,7 +72,7 @@ public class ReadingsArray
 
             int seconds = Integer.parseInt(input.next());  
 
-            a[i] = new RGBReading(name, color, seconds);
+            arr[i] = new RGBReading(name, color, seconds);
             //readingArray[i] = rgbReading;
         }
     }
@@ -110,15 +111,15 @@ public class ReadingsArray
      */
     public RGBReading[] minMax()
     {
-        RGBReading minTime = a[0];
-        RGBReading maxTime = a[0];
+        RGBReading minTime = arr[0];
+        RGBReading maxTime = arr[0];
 
-        for (int i = 0; i < a.length; i++){
-            if (a[i].seconds > maxTime.seconds){
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i].seconds > maxTime.seconds){
                 maxTime = a[i];
             }
-            if (a[i].seconds < minTime.seconds){
-                minTime = a[i];
+            if (arr[i].seconds < minTime.seconds){
+                minTime = arr[i];
             }
         }
 
