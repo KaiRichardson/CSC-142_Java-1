@@ -1,25 +1,41 @@
-import org.junit.Test;
 import static org.junit.Assert.*;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import java.io.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-public class RGBReadingTest 
-{    
-    // <public var> //
-    String name;
-    java.awt.Color color;
-    int seconds;
+/**
+ * The test class RGBReadingTest.
+ *
+ * @author  Kai Richardson
+ * @version 1.0
+ * @since Fall 2019
+ */
+public class RGBReadingTest
+{
+    /**
+     * Default constructor for test class RGBReadingTest
+     */
+    public RGBReadingTest()
+    {
+    }
 
-    // <method tests> //
-    @Test
-    public void testGetColor() {
-        RGBReading rgbReading = new RGBReading(name, color, seconds);
+    /**
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
+    @Before
+    public void setUp()
+    {
+    }
 
-        java.awt.Color result = rgbReading.getColor();
-
-        assertEquals("onetwo", result);
-
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @After
+    public void tearDown()
+    {
     }
 }

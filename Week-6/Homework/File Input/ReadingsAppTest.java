@@ -1,23 +1,42 @@
-import org.junit.Test;
+
+
 import static org.junit.Assert.*;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import java.io.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-public class ReadingsAppTest 
-{    
-    // <public var> //
-    String[] args;
+/**
+ * The test class ReadingsAppTest.
+ *
+ * @author  (your name)
+ * @version (a version number or a date)
+ */
+public class ReadingsAppTest
+{
+    /**
+     * Default constructor for test class ReadingsAppTest
+     */
+    public ReadingsAppTest()
+    {
+    }
 
-    // <method tests> //
-    @Test
-    public void testprocessLoad() {
-        ReadingsApp readingsApp = new ReadingsApp();
+    /**
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
+    @Before
+    public void setUp()
+    {
+    }
 
-        readingsApp.main(args);
-
-        //assertEquals("onetwo", result);
-
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @After
+    public void tearDown()
+    {
     }
 }

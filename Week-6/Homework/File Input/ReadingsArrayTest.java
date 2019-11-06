@@ -1,23 +1,42 @@
-import org.junit.Test;
+
+
 import static org.junit.Assert.*;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import java.io.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-public class ReadingsArrayTest 
-{    
-    // <public var> //
-    String filename;
+/**
+ * The test class ReadingsArrayTest.
+ *
+ * @author  (your name)
+ * @version (a version number or a date)
+ */
+public class ReadingsArrayTest
+{
+    /**
+     * Default constructor for test class ReadingsArrayTest
+     */
+    public ReadingsArrayTest()
+    {
+    }
 
-    // <method tests> //
-    @Test
-    public void testGetColor() {
-        ReadingsArray readingsArray = new ReadingsArray(filename);
+    /**
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
+    @Before
+    public void setUp()
+    {
+    }
 
-        String result = readingsArray.getDate();
-
-        assertEquals("onetwo", result);
-
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @After
+    public void tearDown()
+    {
     }
 }
