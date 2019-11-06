@@ -1,0 +1,28 @@
+#BlueJ class context
+comment0.target=RGBReading
+comment0.text=\r\n\ Supplier\ class\ for\ ReadingApp.\ \r\n\ \r\n\ @author\ Kai\ Richardson\r\n\ @version\ 1.0\r\n\ @since\ Fall\ 2019\r\n\ \r\n
+comment1.params=name\ color\ seconds
+comment1.target=RGBReading(java.lang.String,\ java.awt.Color,\ int)
+comment1.text=\r\n\ RGBReading\ Constructor\r\n\ initialize\ this\ object\ with\ the\ given\ values.\ \r\n\ Throws\ an\ IllegalArgumentException\ for\ invalid\ time\ (time\ must\ be\ >\ 0).\ \r\n\ Throws\ NullPointerException\ if\ either\ of\ the\ references\ are\ null.\r\n\r\n\ @param\ name\ A\ parameter\r\n\ @param\ color\ A\ parameter\r\n\ @param\ seconds\ A\ parameter\r\n\ @throws\ IllegalArgumentException\ for\ invalid\ time\ (time\ must\ be\ >\ 0).\ \r\n\ @throws\ NullPointerException\ if\ either\ of\ the\ references\ are\ null.\r\n
+comment2.params=
+comment2.target=java.awt.Color\ getColor()
+comment2.text=\r\n\ Method\ getColor\r\n\ Returns\ the\ recorded\ Color\ of\ this\ RBGReading\r\n\r\n\ @return\ the\ recorded\ Color\ of\ this\ RBGReading\r\n
+comment3.params=
+comment3.target=int\ getTime()
+comment3.text=\r\n\ Method\ getTime\r\n\ Returns\ the\ recorded\ seconds\ of\ this\ object\r\n\r\n\ @return\ the\ recorded\ seconds\ of\ this\ object\r\n
+comment4.params=
+comment4.target=java.lang.String\ getName()
+comment4.text=\r\n\ Method\ getName\r\n\ Returns\ the\ name\ of\ this\ RBGReading's\ sensor.\r\n\r\n\ @return\ the\ name\ of\ this\ RBGReading's\ sensor.\r\n
+comment5.params=
+comment5.target=double\ brightness()
+comment5.text=\r\n\ Method\ brightness\r\n\ Returns\ the\ perceived\ brightness\ of\ this\ RBGReading's\ color\r\n\ The\ formula\ for\ calculating\ perceived\ brightness\ \=\ sqrt(\ 0.241\ R2\ +\ 0.691\ G2\ +\ 0.068\ B2\ )\r\n\r\n\ @return\ the\ perceived\ brightness\ of\ this\ RBGReading's\ color\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Method\ toString\r\n\ Returns\ a\ String\ representation\ of\ this\ object,\ of\ the\ form\ "Name\ (r,\ g,\ b)\:s"\ \ \r\n\ Including\ this\ RGBReading's\ name,\ the\ red,\ green,\ and\ blue\ values\ of\ the\ color,\ and\ the\ time.\r\n\r\n\ @\ return\ a\ String\ representation\ of\ this\ object.\r\n
+comment7.params=color
+comment7.target=void\ setColor(java.awt.Color)
+comment7.text=\r\n\ Method\ setColor\r\n\ Change\ the\ Color\ of\ this\ object.\ \r\n\r\n\ @param\ color\ A\ parameter\r\n\ @throws\ NullPointerException\ for\ a\ null\ argument.\r\n
+comment8.params=seconds
+comment8.target=void\ setTime(int)
+comment8.text=\r\n\ Method\ toString\r\n\ Change\ the\ recorded\ seconds\ for\ this\ object.\ \r\n\r\n\ @param\ seconds\ A\ parameter\r\n\ @throws\ IllegalArgumentException\ for\ invalid\ argument.\r\n
+numComments=9

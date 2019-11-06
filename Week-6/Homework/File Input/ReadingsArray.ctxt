@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=ReadingsArray
+comment0.text=\r\n\ Client\ App\ for\ RBGReading\ and\ ReadingsArray\r\n\ \r\n\ @author\ Kai\ Richardson\r\n\ @version\ Fall\ 2019\r\n\ \r\n
+comment1.params=filename
+comment1.target=ReadingsArray(java.lang.String)
+comment1.text=\r\n\ ReadingsArray\ Constructor\r\n\ initializes\ a\ ReadingArray\ object\ to\ hold\ RGBReadings,\ reading\ the\ data\ from\ this\ file.\ \ \r\n\ Note\:\ this\ will\ crash\ if\ the\ file\ is\ not\ structured\ the\ correct\ way.\ \r\n\ That's\ fine.\ \r\n\ It\ will\ also\ throw\ the\ FileNotFoundException\ if\ the\ file\ cannot\ be\ opened.\ \r\n\ That's\ also\ fine.\r\n\r\n\ @param\ filename\ A\ parameter\r\n\ @throws\ FileNotFoundException\ if\ the\ file\ cannot\ be\ opened.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getDate()
+comment2.text=\r\n\ Method\ getDate\r\n\r\n\ @return\ the\ date\ of\ these\ readings\r\n
+comment3.params=
+comment3.target=int\ getCount()
+comment3.text=\r\n\ Method\ getCount\r\n\r\n\ @return\ the\ number\ of\ RGBReadings\ in\ this\ object\r\n
+comment4.params=
+comment4.target=int\ posRedChangeCount()
+comment4.text=\r\n\ Method\ posRedChangeCount\r\n\ Return\ the\ count\ of\ how\ many\ times\ the\ red\ value\ increases\ between\ each\ sequential\ RGBReading,\ \r\n\ based\ on\ the\ order\ they\ are\ stored\ in\ the\ ReadingsArray\ object.\ \r\n\ \r\n\ Specifically,\ count\ if\ the\ red\ value\ increases\ from\ the\ first\ RGBReading\ to\ the\ second,\ \r\n\ count\ if\ the\ red\ value\ increases\ between\ the\ second\ and\ third\ RGBReading,\ etc\r\n\r\n\ @return\ the\ count\ of\ how\ many\ times\ the\ red\ value\ increases\ between\ each\ sequential\ RGBReading.\r\n
+comment5.params=filename
+comment5.target=void\ save(java.lang.String)
+comment5.text=\r\n\ Method\ save\r\n\ writes\ the\ brightness\ values\ for\ all\ the\ RGBReading\ objects\ to\ the\ file\ specified.\ \r\n\ \r\n\ The\ first\ line\ of\ the\ file\ is\ the\ date,\ followed\ by\ each\ RGBReading\ name\ and\ its\ brightness,\ \r\n\ separated\ by\ a\ space.\ One\ RGBReading\ per\ line.\r\n\r\n\ @param\ filename\ A\ parameter\r\n\ @throws\ FileNotFoundException\ for\ a\ null\ argument.\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Method\ toString\r\n\ Returns\ a\ String\ that\ represents\ the\ state\ of\ this\ object.\ \r\n\ \r\n\ The\ String\ should\ start\ with\ the\ date,\ followed\ by\ the\ toString()\ for\ each\ RGBReading\ object,\ \r\n\ separated\ by\ a\ new\ line\ character.\r\n\r\n\ @return\ a\ String\ that\ represents\ the\ state\ of\ this\ object.\r\n
+numComments=7
