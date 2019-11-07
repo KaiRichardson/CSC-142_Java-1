@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=ReadingsApp
+comment0.text=\r\n\ Client\ App\ for\ RBGReading\ and\ ReadingsArray\r\n\ \r\n\ @author\ Kai\ Richardson\r\n\ @version\ 1.0\r\n\ @since\ Fall\ 2019\r\n\ \r\n
+comment1.params=
+comment1.target=ReadingsApp()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ReadingsApp\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=
+comment4.target=void\ processLoad()
+comment5.params=
+comment5.target=void\ processSave()
+comment6.params=ra
+comment6.target=java.lang.String\ buildDisplay(ReadingsArray)
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+comment8.params=
+comment8.target=void\ run()
+numComments=9

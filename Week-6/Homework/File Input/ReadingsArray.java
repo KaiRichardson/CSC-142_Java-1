@@ -114,18 +114,18 @@ public class ReadingsArray
         RGBReading minTime = arr[0];
         RGBReading maxTime = arr[0];
 
-        for (int i = 0; i < arr.length; i++){
-            if (arr[i].seconds > maxTime.seconds){
-                maxTime = a[i];
+        for (int i = 1; i < arr.length; i++){
+            if (arr[i].getTime() > maxTime.getTime()){
+                maxTime = arr[i];
             }
-            if (arr[i].seconds < minTime.seconds){
+            if (arr[i].getTime() < minTime.getTime()){
                 minTime = arr[i];
             }
         }
 
         RGBReading[] minMaxTimes = new RGBReading[2];
-        minTime = minMaxTimes[0];
-        maxTime = minMaxTimes[1];
+        minMaxTimes[0] = minTime;
+        minMaxTimes[1] = maxTime;
         return minMaxTimes;
     }
 
@@ -141,22 +141,17 @@ public class ReadingsArray
      */
     public int posRedChangeCount()
     {
-        RGBReading minTime = a[0];
-        RGBReading maxTime = a[0];
-
-        for (int i = 0; i < a.length; i++){
-            if (a[i].seconds > maxTime.seconds){
-                maxTime = a[i];
-            }
-            if (a[i].seconds < minTime.seconds){
-                minTime = a[i];
+        java.awt.Color color = arr[0].getColor();
+        int red = 0;
+        int redIncrease = 0;
+        for (int i = 1; i < arr.length; i++){
+            color = arr[i].getColor();
+            red = color.getRed();
+            if (red > redIncrease){
+                redIncrease++;
             }
         }
-
-        RGBReading[] minMaxTimes = new RGBReading[2];
-        minTime = minMaxTimes[0];
-        maxTime = minMaxTimes[1];
-        return minMaxTimes;
+        return redIncrease;
     }
 
     /**
@@ -170,22 +165,35 @@ public class ReadingsArray
      */
     public RGBReading[] findSmallestGap()
     {
-        RGBReading minTime = a[0];
-        RGBReading maxTime = a[0];
+        java.awt.Color color = arr[0].getColor();
 
-        for (int i = 0; i < a.length; i++){
-            if (a[i].seconds > maxTime.seconds){
-                maxTime = a[i];
-            }
-            if (a[i].seconds < minTime.seconds){
-                minTime = a[i];
-            }
-        }
+        RGBReading smallest_1 = arr[0];
+        RGBReading smallest_2 = arr[0];
 
-        RGBReading[] minMaxTimes = new RGBReading[2];
-        minTime = minMaxTimes[0];
-        maxTime = minMaxTimes[1];
-        return minMaxTimes;
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+        int brightness = 0;
+
+        float[] hsbvals;
+
+        for (int i = 0; i < arr.length; i++){
+            color = arr[i].getColor();
+
+            red = color.getRed();
+            green = color.getGreen();
+            blue = color.getBlue();
+
+            hsbvals = Color.RGBtoHSB(red, green, blue, null);
+            brightness = (int) hsbvals[2];
+            
+            
+            
+        } 
+        RGBReading[] smallestValues = new RGBReading[2];
+        smallestValues[0] = smallest_1;
+        smallestValues[1] = smallest_2;
+        return smallestValues;
     }
 
     /**
@@ -200,22 +208,22 @@ public class ReadingsArray
      */
     public void save(String filename) throws FileNotFoundException
     {
-        RGBReading minTime = a[0];
-        RGBReading maxTime = a[0];
+        RGBReading minTime = arr[0];
+        RGBReading maxTime = arr[1];
 
-        for (int i = 0; i < a.length; i++){
-            if (a[i].seconds > maxTime.seconds){
-                maxTime = a[i];
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i].getTime() > maxTime.getTime()){
+                maxTime = arr[i];
             }
-            if (a[i].seconds < minTime.seconds){
-                minTime = a[i];
+            if (arr[i].getTime() < minTime.getTime()){
+                minTime = arr[i];
             }
         }
 
         RGBReading[] minMaxTimes = new RGBReading[2];
-        minTime = minMaxTimes[0];
-        maxTime = minMaxTimes[1];
-        return minMaxTimes;
+        minMaxTimes[0] = minTime;
+        minMaxTimes[1] = maxTime;
+
     }
 
     /**

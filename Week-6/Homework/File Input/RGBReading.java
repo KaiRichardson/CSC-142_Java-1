@@ -116,7 +116,7 @@ public class RGBReading
         if (color == null){
             throw new NullPointerException("color must not be null");
         } else {
-            color = color;
+            this.color = color;
         }
     }
 
@@ -131,7 +131,7 @@ public class RGBReading
         if (seconds < 0){
             throw new IllegalArgumentException("Seconds must be a positive number");
         } else {
-            seconds = seconds;
+            this.seconds = seconds;
         }
     }
 
