@@ -14,9 +14,10 @@ import java.util.*;
 public class ReadingsArray
 {
     // <public var> //
-    String filename;
-    Scanner input;
-    RGBReading[] arr;
+    private String filename;
+    private Scanner input;
+    private RGBReading[] arr;
+    private String date = "";
 
     // <constructor> //
     /**
@@ -33,49 +34,28 @@ public class ReadingsArray
      */
     public ReadingsArray(String filename) throws FileNotFoundException
     {
-        if (filename != "")
-            throw new FileNotFoundException("File cannot be opened");
-
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Enter the name of a text file:> ");
         filename = keyboard.next();
 
+        if (filename == null){
+            throw new FileNotFoundException("File cannot be opened");
+        }
+
         // opening file to read
         input = new Scanner(new File(filename));
         // reading first line
-        String date = getDate();
+        date = getDate();
         // reading second line
         int count = getCount();
 
         arr = new RGBReading[count];
         load(input);
-        // as long as there is another String to read
 
         input.close();
     }
 
-    // <other methods> //
-    /**
-     * Loads the array with color objects
-     *
-     * @param a The array being passed in.
-     */
-    private void load(Scanner input) 
-    {
-        for(int i = 0; i < arr.length; i++){
-            String name = input.next();  
-
-            float R = Integer.parseInt(input.next()); 
-            float G = Integer.parseInt(input.next()); 
-            float B = Integer.parseInt(input.next());  
-            Color color = new Color(R, G, B); 
-
-            int seconds = Integer.parseInt(input.next());  
-
-            arr[i] = new RGBReading(name, color, seconds);
-            //readingArray[i] = rgbReading;
-        }
-    }
+    // <public methods> //
 
     /**
      * Returns the date of these readings.
@@ -165,31 +145,12 @@ public class ReadingsArray
      */
     public RGBReading[] findSmallestGap()
     {
-        java.awt.Color color = arr[0].getColor();
 
         RGBReading smallest_1 = arr[0];
         RGBReading smallest_2 = arr[0];
 
-        int red = 0;
-        int green = 0;
-        int blue = 0;
-        int brightness = 0;
+        float[] brightnessArr = findBrightness(arr.length);
 
-        float[] hsbvals;
-
-        for (int i = 0; i < arr.length; i++){
-            color = arr[i].getColor();
-
-            red = color.getRed();
-            green = color.getGreen();
-            blue = color.getBlue();
-
-            hsbvals = Color.RGBtoHSB(red, green, blue, null);
-            brightness = (int) hsbvals[2];
-            
-            
-            
-        } 
         RGBReading[] smallestValues = new RGBReading[2];
         smallestValues[0] = smallest_1;
         smallestValues[1] = smallest_2;
@@ -208,21 +169,21 @@ public class ReadingsArray
      */
     public void save(String filename) throws FileNotFoundException
     {
-        RGBReading minTime = arr[0];
+        if (filename == null){
+            throw new FileNotFoundException("File cannot be opened");
+        }
+
+        float[] brightnessArr = findBrightness(arr.length);
+
+        RGBReading name = arr[0];
         RGBReading maxTime = arr[1];
 
         for (int i = 0; i < arr.length; i++){
-            if (arr[i].getTime() > maxTime.getTime()){
-                maxTime = arr[i];
-            }
-            if (arr[i].getTime() < minTime.getTime()){
-                minTime = arr[i];
-            }
+
         }
 
         RGBReading[] minMaxTimes = new RGBReading[2];
-        minMaxTimes[0] = minTime;
-        minMaxTimes[1] = maxTime;
+
 
     }
 
@@ -237,8 +198,69 @@ public class ReadingsArray
      */
     public String toString()
     {
-        String recordedColor = "2";
-        return recordedColor;
+        String dateInt;
+        for (int i = 0; i < arr.length; i++){
+            dateInt = date;
+            arr = 
+            System.out.println(dateInt);
+        }
     }
 
+    // <private methods> //
+    /**
+     * Returns an array containing the brightness levels and name of all colors in an array of RGB values. 
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    private float[] findBrightness(int count)
+    {
+        java.awt.Color color = arr[0].getColor();
+
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+        int brightness = 0;
+
+        float[] brightnessArr = new float[count];
+
+        float[] hsbvals = new float[3];
+
+        for (int i = 0; i < count; i++){
+            color = arr[i].getColor();
+
+            red = color.getRed();
+            green = color.getGreen();
+            blue = color.getBlue();
+
+            hsbvals = Color.RGBtoHSB(red, green, blue, null);
+            brightness = (int) hsbvals[2];
+
+            brightnessArr[i] = brightness;
+        } 
+        return brightnessArr;
+    }
+
+    /**
+     * Loads the array with color objects
+     *
+     * @param a The array being passed in.
+     */
+    private void load(Scanner input) 
+    {
+        for(int i = 0; i < arr.length; i++){
+            String name = input.next();  
+
+            float R = Integer.parseInt(input.next()); 
+            float G = Integer.parseInt(input.next()); 
+            float B = Integer.parseInt(input.next());  
+            Color color = new Color(R, G, B); 
+
+            int seconds = Integer.parseInt(input.next());  
+
+            arr[i] = new RGBReading(name, color, seconds);
+            //readingArray[i] = rgbReading;
+        }
+    }
 }
+

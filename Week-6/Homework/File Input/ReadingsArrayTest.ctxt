@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ReadingsArrayTest
-comment0.text=\r\n\ The\ test\ class\ ReadingsArrayTest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ test\ class\ RGBReadingTest.\r\n\r\n\ @author\ \ Kai\ Richardson\r\n\ @version\ 1.0\r\n\ @since\ Fall\ 2019\r\n
 comment1.params=
 comment1.target=ReadingsArrayTest()
 comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ ReadingsArrayTest\r\n

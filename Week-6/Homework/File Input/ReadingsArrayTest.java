@@ -1,15 +1,14 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * The test class ReadingsArrayTest.
+ * The test class RGBReadingTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  Kai Richardson
+ * @version 1.0
+ * @since Fall 2019
  */
 public class ReadingsArrayTest
 {
