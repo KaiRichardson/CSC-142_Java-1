@@ -174,17 +174,6 @@ public class ReadingsArray
         }
 
         float[] brightnessArr = findBrightness(arr.length);
-
-        RGBReading name = arr[0];
-        RGBReading maxTime = arr[1];
-
-        for (int i = 0; i < arr.length; i++){
-
-        }
-
-        RGBReading[] minMaxTimes = new RGBReading[2];
-
-
     }
 
     /**
@@ -198,20 +187,16 @@ public class ReadingsArray
      */
     public String toString()
     {
-        String dateInt;
-        for (int i = 0; i < arr.length; i++){
-            dateInt = date;
-            arr = 
-            System.out.println(dateInt);
-        }
+        String print = date +" - "+ arr.toString();
+        return print;
     }
 
     // <private methods> //
     /**
      * Returns an array containing the brightness levels and name of all colors in an array of RGB values. 
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param count The length of the array of colors.
+     * @return An array containing brightness levels.
      */
     private float[] findBrightness(int count)
     {
